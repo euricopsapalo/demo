@@ -1,0 +1,47 @@
+<div class="container">
+
+      <div class="row">
+
+            <div class="col-xs-12" >
+            	<h1>Lista de Mercados</h1>
+               
+            </div>
+      	
+
+      </div>
+
+   
+       <div class="row">
+
+            <div class="col-xs-12">
+
+                  <div class="table-responsive">
+
+
+		                     <table  class="table products-table" class="table table-bordered food-table"arrow-selector ng-if="showTable">
+		                     
+								    <tr>
+								        <th>Nome</th>
+								        <th>Responsável</th>
+								        <th>Provincia</th>    
+								    </tr>
+								    <tr ng-repeat="market in vm.markets" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index)">
+								        
+								        <td >{{market.name}}</td>
+								        <td>{{market.accountable}}</td>
+								        <td>{{market.province.name}}</td>
+			        
+								    </tr>
+		                    </table>
+
+                  </div>
+
+                   
+            	
+            </div>
+      	
+
+      </div>
+	
+
+</div>
