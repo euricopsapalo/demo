@@ -1,0 +1,29 @@
+ <div class="row">
+   <div class="col-xs-12">
+     <div class="side-form">
+       <div class="content">
+         <h1>{{vm.title}}</h1>
+        <div class="form-container">
+          <form method="post" name="frm">
+                                        
+             <div class=" form-group">
+                <label class="col-xs-3" for="name">Nome</label>
+                <input type="text" id="name" class="form-control" ng-model="vm.product.name" required ng-required="true"/>
+            </div>
+            <div class=" form-group">
+                <label class="col-xs-3" for="name">Preço</label>
+                <input type="text" id="price" class="form-control" ng-model="vm.product.price" required ng-required="true"/>
+            </div>
+                                                
+            <div class="form-group">
+                <a class=" btn btn-default" ui-sref="products">Cancelar</a>
+                <button class=" btn btn-primary" ng-click="vm.saveProduct()" ng-disabled="frm.$invalid ">Salvar</button>
+            </div>
+         </form>
+      </div>
+   </div>
+    <div class="background"></div>
+  </div>
+  </div>            
+ </div>   
+</div>

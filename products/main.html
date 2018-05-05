@@ -1,0 +1,49 @@
+<div class="container">
+      <div class=" row">
+         <div  class="col-xs-12">
+                
+             <h1>Produtos</h1> 
+
+          </div>
+
+       </div>
+       <div class="row">
+
+              <div class="col-xs-6">
+                 <a ui-sref="products.add" class="btn btn-default">Adicionar Produto</a>
+              </div>
+                   
+              <div class="col-xs-6">
+                 <input type="text" ng-model="search" class="form-control" placeholder="filtre pelo nome">
+              </div>
+       </div>
+      <div class="row">
+             
+            <div class="col-xs-12">
+                        <div class="table-responsive">
+                             <table class=" table products-table">
+                                     <tr>
+                                         <th>Nome</th>
+                                         <th>Preço</th>
+                                         <th class="delete-column"></th>
+                                         <th class="edit-column"></th>
+                                      </tr>
+                                      <tr ng-animate="'animate'" ng-repeat="product in vm.products  | filter:search ">
+                                           <td>{{product.name}}</td>
+                                           <td> {{product.price}} Kz</td>
+                                             <td><a  class="btn btn-xs  btn-info" ui-sref="products.edit({ id: product.id })">editar</a></td>
+                                            <td><a ng-click="vm.deleteProduct(product.id)" class="btn btn-xs btn-danger">Eliminar</a></td>
+                                     </tr>
+                              </table> 
+                         </div>
+                         <div ui-view class="view-side-form"></div>
+
+          
+                                     
+           </div>                 
+      </div>       
+</div>
+
+
+
+
