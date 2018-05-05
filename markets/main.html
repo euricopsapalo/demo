@@ -1,0 +1,53 @@
+<div class="container">
+      <div class=" row">
+         <div  class="col-xs-12">
+                
+             <h1>Mercados</h1> 
+
+          </div>
+
+       </div>
+       <div class="row">
+
+              <div class="col-xs-6">
+                 <a ui-sref="markets.add" class="btn btn-default">Criar Mercado</a>
+              </div>
+                   
+              <div class="col-xs-6">
+                 <input type="text" ng-model="search" class="form-control" placeholder="filtre pelo nome">
+              </div>
+       </div>
+      <div class="row">
+             
+            <div class="col-xs-12">
+                        <div class="table-responsive">
+                             <table class=" table products-table">
+                                     <tr>
+                                         <th>Nome</th>
+                                         <th>Responsável</th>
+                                         <th>Provincia</th>
+                                         <th>Municipio</th>
+                                         <th class="edit-column"></th>
+                                         <th class="delete-column"></th>
+                                          
+                                      </tr>
+                                      <tr ng-animate="'animate'" ng-repeat="market in vm.markets  | filter:search ">
+                                           <td>{{market.name}}</td>
+                                           <td>{{market.accountable}}</td>
+                                           <td>{{market.province.name}}</td>
+                                           <td>{{market.township.name}}</td>
+                                           <td><a  class="btn btn-xs  btn-info" ui-sref="markets.edit({id: market.id })">editar</a></td>
+                                            <td><a ng-click="vm.deleteMarket(market.id)" class="btn btn-xs btn-danger">Eliminar</a></td>
+                                            
+                                     </tr>
+                              </table> 
+                         </div>
+                         <div ui-view class="view-side-form"></div>
+
+           </div>                 
+      </div>       
+</div>
+
+
+
+
