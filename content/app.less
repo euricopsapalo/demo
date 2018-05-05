@@ -1,0 +1,155 @@
+/* ESTILO GERAL E CLASSES
+--------------------------------------------------------------------- */
+body {
+  padding: 5px;
+}
+
+/* ESTILO DO CABEÇALHO
+--------------------------------------------------------------------- */
+header {
+}
+
+/* ESTILO PRINCIPAL
+--------------------------------------------------------------------- */
+main {
+    padding: 0 20px;
+    min-height: 300px;
+
+    .products-table {
+        margin-top: 20px;
+        
+        .delete-column {
+            width: 60px;
+        }
+    }
+
+
+    /* ANIMAÇÕES DE TRANSIÇÃO PARA A VISTA PRINCIPAL 
+    ------------------------------------------*/
+
+    
+    &.ng-enter {
+       
+        transition: .5s;
+
+       
+        opacity: 0;
+    }
+
+    /* end 'enter' transition */
+    &.ng-enter-active {
+        
+        opacity: 1;
+    }
+
+
+    /* form lateral */
+    .view-side-form {
+        .side-form {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .content {
+                position: absolute;
+                z-index: 100;
+                top: 0;
+                right: 0;
+                width: 80%;
+                height: 100%;
+                overflow: auto;
+                background: #fff;
+                padding: 20px;
+                border-left: 1px solid #e0e0e0;
+            }
+
+            .background {
+                background: #000;
+                opacity: .8;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+
+        /* 
+        ANIMAÇÕES DE TRANSIÇÃO PARA O FORM LATERAL
+        ------------------------------------------*/
+
+        /* animações  para a visualização do  form lateral */
+        &.ng-enter, 
+        &.ng-leave {
+            
+            transition: .5s;
+        }
+
+       
+        &.ng-enter {
+            .side-form {
+                .content {
+                    /* start with content 80% off the right of the page */
+                    right: -80%;
+                }
+
+                .background {
+                    /* start with background opacity 0 (invisible) */
+                    opacity: 0;
+                }
+            }
+        }
+
+        /* end 'enter' transition */
+        &.ng-enter-active {
+            .side-form {
+                .content {
+                   
+                     
+                    transition: right .5s;
+
+                   
+                    right: 0;
+                }
+
+                .background {
+                    
+                    transition: opacity .5s;
+
+                   
+                    opacity: .8;
+                }
+            }
+        }
+
+      
+        &.ng-leave-active {
+            .side-form {
+                .content {
+                   
+                    transition: right .5s;
+                    
+                   
+                    right: -100%;
+                }
+
+                .background {
+                    
+                    transition: opacity .5s;
+
+                   
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ESTILO PARA O FOOTER 
+--------------------------------------------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
