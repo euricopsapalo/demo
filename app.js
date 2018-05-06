@@ -113,11 +113,31 @@
         ,TownshipService,MarketService,SellerService,AreaService) {
 
         // adicionando alguns produtos inicialmente
-        if(ProductService.GetAll().length === 0) {
+       if(ProductService.GetAll().length === 0) {
             
-            ProductService.Save({ name: 'Tomate', price: '250.00' });
-            ProductService.Save({ name: 'Banana', price: '200.00' });
-            ProductService.Save({ name: 'Sereal (Flip Flops)', price: '1500.00' });
+            ProductService.Save({ name: 'Martelo', category:{
+                 name:'Materias de construção', 
+                 accountable:'Bruna Batalha ',
+                 state:false,
+                 id:3
+            
+             },state:false});
+            ProductService.Save({ name: 'Frango', category: {
+                 name:'Fescos', 
+                 accountable:'Januario Ilario ',
+                 state:false,
+                 id:1
+            
+             },state:false});
+
+
+            ProductService.Save({ name: 'Alface ', category:{
+                 name:'Verduras', 
+                 accountable:'Martins Galiano ',
+                 state:false,
+                 id:2
+            
+             },state:false});
         }
 
         if(UserService.GetAll().length === 0) {           
