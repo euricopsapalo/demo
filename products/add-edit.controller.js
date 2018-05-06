@@ -5,16 +5,18 @@
         .module('app')
         .controller('Products.AddEditController', Controller);
 
-    function Controller($scope, $state, $stateParams, ProductService,$cookieStore) {
+    function Controller($scope, $state, $stateParams, ProductService,$cookieStore,$rootScope,AreaService) {
         var vm = this;
 
         vm.title = 'Adicionar Produto';
         vm.product = {};
         vm.saveProduct = saveProduct;
+        $rootScope.Areas={}
 
         initController();
 
         function initController() {
+            loadArea();
             if ($stateParams.id) {
                 vm.title = 'Editar produto';
                 vm.product = ProductService.GetById($stateParams.id);
@@ -32,6 +34,11 @@
             
             //emit um envento para que a controladora possa actualizar
             $scope.$emit('products-updated');
+        }
+        
+          function loadArea() {
+            $rootScope.Areas=AreaService.GetAll(); 
+           
         }
     }
 
