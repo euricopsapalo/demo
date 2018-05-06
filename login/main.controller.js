@@ -38,17 +38,14 @@
 
 
         function logout(){
-
-            console.log($location.path());
-             console.log($rootScope.globals.currentUser);
-            //$rootScope.$on('$locationChangeStart', function (event, next, current) {          
+                     
             if ( $rootScope.globals.currentUser!=null) {
                 console.log('aqui');
                 AuthenticationService.ClearCredentials();
                 $location.path('/login');
                 $route.reload();
             }
-        //});
+       
         }
 
 
