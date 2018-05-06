@@ -10,10 +10,16 @@
                 <label class="col-xs-3" for="name">Nome</label>
                 <input type="text" id="name" class="form-control" ng-model="vm.product.name" required ng-required="true"/>
             </div>
-            <div class=" form-group">
-                <label class="col-xs-3" for="name">Preço</label>
-                <input type="text" id="price" class="form-control" ng-model="vm.product.price" required ng-required="true"/>
-            </div>
+             <div class=" form-group">
+                <label class="col-xs-3" for="category">Categoria</label>
+                  <multiselect class="input-xlarge" 
+                   ng-model="vm.product.category"
+                   options="a.name for a in Areas"
+                   change="selected()" ></multiselect>
+                    <div class="well well-small">
+                         {{vm.product.category.name}}
+                     </div>
+           </div> 
                                                 
             <div class="form-group">
                 <a class=" btn btn-default" ui-sref="products">Cancelar</a>
