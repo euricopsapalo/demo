@@ -1,0 +1,49 @@
+<div class="container">
+      <div class=" row">
+         <div  class="col-xs-12">
+                
+             <h1>Áreas</h1> 
+
+          </div>
+
+       </div>
+       <div class="row">
+
+              <div class="col-xs-6">
+                 <a ui-sref="areas.add" class="btn btn-default">Adicionar Area</a>
+              </div>
+                   
+              <div class="col-xs-6">
+                 <input type="text" ng-model="search" class="form-control" placeholder="filtre pelo nome">
+              </div>
+       </div>
+      <div class="row">
+             
+            <div class="col-xs-12">
+                        <div class="table-responsive">
+                             <table class=" table products-table">
+                                     <tr>
+                                         <th>Nome</th>
+                                         <th>Responsável</th>
+                                         <th class="delete-column"></th>
+                                         <th class="edit-column"></th>
+                                      </tr>
+                                      <tr ng-animate="'animate'" ng-repeat="area in vm.areas  | filter:search ">
+                                           <td>{{area.name}}</td>
+                                           <td> {{area.accountable}}</td>
+                                             <td><a  class="btn btn-xs  btn-info" ui-sref="areas.edit({ id: area.id })">editar</a></td>
+                                            <td><a ng-click="vm.deleteArea(area.id)" class="btn btn-xs btn-danger">Eliminar</a></td>
+                                     </tr>
+                              </table> 
+                         </div>
+                         <div ui-view class="view-side-form"></div>
+
+          
+                                     
+           </div>                 
+      </div>       
+</div>
+
+
+
+
