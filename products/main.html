@@ -30,7 +30,7 @@
                                       </tr>
                                       <tr ng-animate="'animate'" ng-repeat="product in vm.products  | filter:search ">
                                            <td>{{product.name}}</td>
-                                           <td> {{product.category.name}} Kz</td>
+                                           <td> {{product.category.name}} </td>
                                              <td><a  class="btn btn-xs  btn-info" ui-sref="products.edit({ id: product.id })">editar</a></td>
                                             <td><a ng-click="vm.deleteProduct(product.id)" class="btn btn-xs btn-danger">Eliminar</a></td>
                                      </tr>
