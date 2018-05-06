@@ -30,7 +30,7 @@
             <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^view')}"><a ui-sref="view">Pagina principal</a></li>
             <li ng-show="dataLogin.acesslevel=='SUPERADMIN'" ng-class="{active: currentState.match('^user')}"><a ui-sref="users">Usuários</a></li>
             <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^market')}"><a ui-sref="markets">Mercados</a></li>
-            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^area')}"><a ui-sref="areas">Areás</a></li>
+            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^area')}"><a ui-sref="areas">Áreas</a></li>
             <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^product')}"><a ui-sref="products">Produtos</a></li>
             <li ng-show="dataLogin!=-1" style="float:right"><a href="#/login" ng-click="logout()">Logout</a></li>
 
