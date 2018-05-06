@@ -75,6 +75,26 @@
                     controllerAs: 'vm'
 
                 })
+        
+             .state('areas', {
+                url: '/areas',
+                templateUrl: 'areas/main.html',
+                controller: 'Areas.MainController',
+                controllerAs: 'vm'
+            })
+                .state('areas.add', {
+                    url: '/add',
+                    templateUrl: 'areas/add-edit.html',
+                    controller: 'Areas.AddEditController',
+                    controllerAs: 'vm'
+                })
+                .state('areas.edit', {
+                    url: '/edit/:id',
+                    templateUrl: 'areas/add-edit.html',
+                    controller: 'Areas.AddEditController',
+                    controllerAs: 'vm'
+
+                }) 
 
                 .state('login', {
                 url: '/login',
@@ -90,7 +110,7 @@
 
     function run($rootScope,$http,$location, ProductService
         ,UserService,$cookieStore,ProvinceService
-        ,TownshipService,MarketService,SellerService) {
+        ,TownshipService,MarketService,SellerService,AreaService) {
 
         // adicionando alguns produtos inicialmente
         if(ProductService.GetAll().length === 0) {
@@ -170,6 +190,32 @@
 
 
              });
+           
+           
+           
+         if(AreaService.GetAll().length === 0) { 
+
+
+                 AreaService.Save({
+                 name:'Fescos', 
+                 accountable:'Januario Ilario '
+            
+             });
+
+                  AreaService.Save({
+                 name:'Verduras', 
+                 accountable:'Martins Galiano '
+            
+             });
+
+                   AreaService.Save({
+                 name:'Materias de construção', 
+                 accountable:'Bruna Batalha '
+            
+             });
+
+
+              }
 
              
 
