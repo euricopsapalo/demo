@@ -1,0 +1,69 @@
+<div class="container">
+      <div class=" row">
+         <div  class="col-xs-12">
+                
+             <h1>Vendedores</h1> 
+
+          </div>
+
+       </div>
+       <div class="row">
+
+              <div class="col-xs-6">
+                 <a ui-sref="sellers.add" class="btn btn-default">Cadastrar Vendedor</a>
+              </div>
+                   
+              <div class="col-xs-6">
+                 <input type="text" ng-model="search" class="form-control" placeholder="filtre pelo nome">
+              </div>
+       </div>
+      <div class="row">
+             
+            <div class="col-xs-12">
+                        <div class="table-responsive">
+                             <table class=" table products-table">
+                                     <tr>
+                                         
+                                         <th>NR-vendedor</th>
+                                         <th>Sequencia</th>
+                                         <th>Nome</th>
+                                         <th>Mercado</th>
+                                         <th>Data de registro</th>
+                                         <th>Codigo de barra</th>
+                                         <th class="delete-column"></th>
+                                         <th class="edit-column"></th>
+                                         <th class="edit-column"></th>
+                                      </tr>
+                                      <tr ng-animate="'animate'" ng-repeat="seller in vm.sellers  | filter:search ">
+
+                      
+                                           <td>{{seller.numberSeller}}</td>
+                                           <td>{{seller.id}}</td>
+                                           <td>{{seller.name}}</td>
+                                           <td>{{seller.market.name}}</td>
+                                           <td>{{seller.craeteDate | date:'yyyy-MM-dd'}}</td>
+                                          
+                                        <td><a ui-sref ="sellers.sellerGb" ng-click="vm.barcodeSeller( seller)"  class="btn btn-xs  btn-info"
+                                        class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm"
+
+
+                                        >Gerar</a></td>
+                                        <td><a ng-click="vm.deleteSeller(seller.id)" class="btn btn-xs btn-danger">Eliminar</a></td>
+                                        <td><a ui-sref="sellers.edit({ id: seller.id })"  class="btn btn-xs  btn-info">Editar</a></td>
+
+                                  
+
+                                     </tr>
+                              </table> 
+                         </div>
+                         <div ui-view class="view-side-form"></div>
+
+          
+                                     
+           </div>                 
+      </div>       
+</div>
+
+
+
+

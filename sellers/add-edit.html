@@ -1,0 +1,250 @@
+ <div class="row">
+
+   <div class="col-xs-12">
+     <div class="side-form">
+       <div class="content">
+        <h1>Cadastrar vendedores</h1>
+      
+        <div class="form-container">
+          <form method="post" name="frm">
+            <br>
+            <h4>Dados Pessoais</h4>
+            <br>                     
+             <div class=" form-group">
+               
+                <label class="col-xs-3" for="name">Nome</label>
+                <input type="text" id="name" class="form-control" ng-model="vm.seller.name" required ng-required="true"/>
+                <br>
+                <label class="col-xs-3" for="father">Pai</label>
+                <input type="text" id="father" class="form-control" ng-model="vm.seller.father"  ng-required="true"/>
+                <br>
+                <label class="col-xs-3" for="mother">Mãe</label>
+                <input type="text" id="mother" class="form-control" ng-model="vm.seller.mother"  ng-required="true"/>
+
+               <br>
+               <label class="col-xs-3" for="gender">Genero</label>
+               <select name="gender" id="gender" class="form-control" required="required" ng-model="vm.seller.gender">
+                    <option value="F">F</option>
+                    <option value="M">M</option>    
+               </select>
+
+               <br>
+               <label class="col-xs-3" for="province">Provincia</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.province"
+                   options="p.name for p in Provices"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.province.name}}
+                  </div>
+
+                <br>
+                <label class="col-xs-3" for="township">Municipio</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.township"
+                   options="t.name for t in Townships"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.township.name}}
+                  </div>
+                 <br>
+                  <label class="col-xs-3" for="father">Data de nascimento</label>
+                  <input type="date" id="birthday" class="form-control" ng-model="vm.seller.birthday"  />
+                 <br>
+               <label class="col-xs-3" for="civilState">Estado civil</label>
+               <select name="civilState" id="civilState" class="form-control" required="required" ng-model="vm.seller.civilState">
+                    <option value="solteiro(a)">solteira(o)</option>
+                    <option value="casada(o)">casada(o)</option> 
+                    <option value="viuvo(a)">viuva(o)</option>   
+               </select>
+               <br>
+                <label class="col-xs-3" for="father">Residencia</label>
+                <input type="text" id="residenceAddress" class="form-control" ng-model="vm.seller.residenceAddress"  ng-required="true"/>
+
+                <br>
+                <label class="col-xs-3" for="father">Número da casa</label>
+                <input type="number" id="residenceAddressNumber" class="form-control" ng-model="vm.seller.residenceAddressNumber"  ng-required="true"/>
+
+
+                <br>
+                <label class="col-xs-3" for="residenceAddressZone">Número da zona</label>
+                <input type="number" id="residenceAddressZone" class="form-control" ng-model="vm.seller.residenceAddressZone"  ng-required="true"/>
+
+                 <br>
+                <label class="col-xs-3" for="streetAddress">Número da  rua</label>
+                <input type="text" id="streetAddress" class="form-control" ng-model="vm.seller.streetAddress"  ng-required="true"/>
+
+              <br>
+               <label class="col-xs-3" for="residenceProvince">Provincia de residência</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.residenceProvince"
+                   options="p.name for p in Provices"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.residenceProvince.name}}
+                  </div>
+
+
+              <br>
+
+              <label class="col-xs-3" for="residenceTownship">Municipio de residência</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.residenceTownship"
+                   options="t.name for t in Townships"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.residenceTownship.name}}
+                  </div>
+
+              <br>
+                <label class="col-xs-3" for="contactNumber1">Número de telefone</label>
+                <input type="number" id="contactNumber1" class="form-control" ng-model="vm.seller.contactNumber1"  ng-required="true"/>
+
+
+
+            </div>
+            <br>  
+             <h4>Dados B.I</h4>  
+            <br>   
+            <div class=" form-group">
+                <br>
+                <label class="col-xs-3" for="accountable">Número do B.I</label>
+                <input type="text" id="bi" class="form-control" ng-model="vm.seller.bi"  ng-required="true"/>
+                <br>
+                <label class="col-xs-3" for="indentificationArchive">Arquivo de identificação</label>
+                <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.indentificationArchive"
+                   options="p.name for p in Provices"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.indentificationArchive.name}}
+                  </div>
+
+                  <br>
+                  <label class="col-xs-3" for="emissionDateBi">Data de emissão do bi</label>
+                  <input type="date" id="emissionDateBi" class="form-control" ng-model="vm.seller.emissionDateBi"  />
+            </div>
+             <br>  
+             <h4>Dados Academicos</h4>  
+            <br>   
+            <div class=" form-group">
+                <br>
+               <label class="col-xs-3" for="student">Estudante ?</label>
+               <select name="student" id="student" class="form-control" required="required" ng-model="vm.seller.student">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>    
+               </select>
+
+               <br>
+               <label class="col-xs-3" for="read">Lê ?</label>
+               <select name="read" id="read" class="form-control" required="required" ng-model="vm.seller.read">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>    
+               </select>
+
+                <br>
+                <label class="col-xs-3" for="class">Classe</label>
+                <input type="number" id="class" class="form-control" ng-model="vm.seller.class"  ng-required="true"/>
+
+
+
+            </div>
+
+
+
+            <br>  
+             <h4>Dados do Mercado</h4>  
+            <br>   
+            <div class=" form-group">
+                <br>
+                <label class="col-xs-3" for="accountable">Produtos</label>
+
+                    <multiselect class="input-xlarge" multiple="true"
+                      ng-model="vm.seller.products"
+                      options="x.name for x in Products
+"
+                      change="selected()" ></multiselect>
+                          <div >
+                             <br>
+                          </div>
+                    <div class="well well-small" >
+                
+                          <div ng-repeat="p in vm.seller.products">
+                             {{p.name}}
+                          </div>
+                     
+                    </div>
+
+                  <br>
+                <label class="col-xs-3" for="market">Mercado</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.market"
+                   options="m.name for m in Markets"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.market.name}}
+                  </div>
+
+
+                   <br>
+                <label class="col-xs-3" for="area">Area</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.area"
+                   options="a.name for a in Areas"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.area.name}}
+                  </div>
+
+
+
+                 <br>
+                <label class="col-xs-3" for="area">Local</label>
+                 <multiselect class="input-xlarge" 
+                   ng-model="vm.seller.place"
+                   options="p.name for p in Places"
+                   change="selected()" ></multiselect>
+                  <div class="well well-small">
+                         {{vm.seller.place.name}}
+                  </div>
+
+                  <br>
+                  <label class="col-xs-3" for="beginActDate">Data de inicio da actividade</label>
+                  <input type="date" id="beginActDate" class="form-control" ng-model="vm.seller.beginActDate"  />
+
+
+
+
+            </div>
+
+            <br>  
+             <h4>Dados de Pagamento</h4>  
+            <br>   
+            <div class=" form-group">
+            <br>
+               <label class="col-xs-3" for="read">Modalidade de pagamento</label>
+               <select name="paymentType" id="paymentType" class="form-control" required="required" ng-model="vm.seller.paymentType">
+                    <option value="Diario">Diario</option>
+                    <option value="Mensal">Mensal</option>    
+               </select>
+
+
+               <br>
+                <label class="col-xs-3" for="father">Valor de pagamento</label>
+                <input type="number" id="valuePayment" class="form-control" ng-model="vm.seller.valuePayment"  ng-required="true"/>
+
+            </div>
+             <div class="form-group">
+                <a class=" btn btn-default" ui-sref="sellers">Cancelar</a>
+                <button class=" btn btn-primary" ng-click="vm.saveSeller()" ng-disabled="frm.$invalid ">Salvar</button>
+            </div>
+
+       
+         </form>
+      </div>
+   </div>
+    <div class="background"></div>
+  </div>
+  </div>            
+ </div>   
+</div>
