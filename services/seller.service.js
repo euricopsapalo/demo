@@ -61,7 +61,7 @@
             for (var i = 0; i < sellers.length; i++) {
                 var seller = sellers[i];
                 if (seller.id === id) {
-                    seller.splice(i, 1);
+                    sellers.splice(i, 1);
                     break;
                 }
             }
