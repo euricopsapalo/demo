@@ -65,7 +65,7 @@
                     break;
                 }
             }
-            setSeller(sellers);
+            setSellers(sellers);
             
             return;
         }
