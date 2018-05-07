@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<meta charset="utf-8" />
+<head>
+    <title>CRUD DE PRODUTOS</title>
+    <!--tag responsavel -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8 maximum-scale=1, user-scalable=no">
+ 
+   <!-- folhas de estilo bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/multiselect.css" rel="stylesheet" />
+    <!-- folhas de estilo personalizada -->
+    <link href="content/app.less" rel="stylesheet/less" type="text/css" />
+
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen" />
+    <link href="css/multiselect.css" rel="stylesheet" media="screen" />
+
+    <link href="css/kendo.common-material.min.css" rel="stylesheet" media="screen" />
+
+    <link href="css/kendo.material.mobile.min.css" rel="stylesheet" media="screen" />
+
+    <link href="css/kendo.common-material.min.css" rel="stylesheet" media="screen" />
+    
+      <!-- folhas de estilo personalizada para a animação da tabela -->
+    <link href="css/animationsTable.css" rel="stylesheet" media="screen" />
+
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <ul class="nav nav-tabs"  ng-controller="login.MainController as lctr">
+
+
+            <li ng-hide="dataLogin!=-1" ng-class="{active: currentState.match('^login')}"><a ui-sref="login">Login </a></li>
+            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^view')}"><a ui-sref="view">Pagina principal</a></li>
+            <li ng-show="dataLogin.acesslevel=='SUPERADMIN'" ng-class="{active: currentState.match('^user')}"><a ui-sref="users">Usuários</a></li>
+            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^market')}"><a ui-sref="markets">Mercados</a></li>
+             <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^area')}"><a ui-sref="areas">Areás</a></li>
+            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^product')}"><a ui-sref="products">Produtos</a></li>
+
+            <li ng-show="dataLogin!=-1" ng-class="{active: currentState.match('^seller')}"><a ui-sref="sellers">Vendedores</a></li>
+
+            <li ng-show="dataLogin!=-1" style="float:right"><a href="#/login" ng-click="logout()">Logout</a></li>
+
+           
+        </ul>
+    </header>
+
+    <!-- main -->
+    <main ui-view></main>
+
+    <!-- footer -->
+    <footer>
+        
+        <p>
+            <p>&copy;Eurico Sapalo. Todos os direitos reservados.</p>
+        </p>
+    </footer>
+
+    <!-- less.js -->
+    <script src="mainjs/less.min.js"></script>
+     <script src="mainjs/jquery-1.11.0.min.js"></script>
+     <script src="mainjs/bootstrap.min.js"></script>
+     <script src="mainjs/sweetalert.min.js"></script>
+     
+
+    <!-- angular -->
+    <script src="mainjs/angular.js"></script>
+    <script src="mainjs/angular-animate.min.js"></script>
+
+    <!-- ui router -->
+    <script src="mainjs/angular-ui-router.min.js"></script>
+    <script src="mainjs/angular-cookies.js"></script>
+    <script src="mainjs/angular-route.js"></script>
+    <script src="mainjs/angular-route2.js"></script>
+
+    <script src="mainjs/kendo.all.min.js"></script>
+    
+
+    <!-- scripts da aplicação personalizados -->
+    <script src="app.js"></script>
+    <script src="services/product.service.js"></script>
+    <script src="services/user.service.js"></script>
+    <script src="services/province.service.js"></script>
+    <script src="services/township.service.js"></script>
+    <script src="services/market.service.js"></script>
+    <script src="services/authentication.service.js"></script>
+    <script src="services/area.service.js"></script>
+    <script src="services/seller.service.js"></script>
+    <script src="services/place.service.js"></script>
+
+    <script src="view/main.controller.js"></script>
+
+    <script src="products/main.controller.js"></script>
+    <script src="products/add-edit.controller.js"></script>
+
+    <script src="users/main.controller.js"></script>
+    <script src="users/add-edit.controller.js"></script>
+
+    <script src="markets/main.controller.js"></script>
+    <script src="markets/add-edit.controller.js"></script>
+
+    <script src="areas/add-edit.controller.js"></script>
+    <script src="areas/main.controller.js"></script>
+
+    <script src="sellers/add-edit.controller.js"></script>
+    <script src="sellers/main.controller.js"></script>
+
+
+
+    <script src="login/main.controller.js"></script>
+    <script src="mainjs/multiselect.js"></script>
+</body>
+</html>
